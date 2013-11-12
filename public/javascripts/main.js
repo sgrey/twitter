@@ -2,14 +2,14 @@
  * Created by marina on 11/12/13.
  */
 $(function() {
-    $("#send").on("click", function()
+    $("#post").on("click", function()
     {
-        var textarea = $("#textarea").val();
-        var entrytext = $("#entrytext").val();
+        var title = $("#title").val();
+        var content = $("#content").val();
         $.ajax({
             type: "POST",
-            url: "adding",
-            data: { textarea: textarea, entrytext: entrytext }
+            url: "posting",
+            data: { title: title, context: content }
         })
             .done(function( msg ) {
                 alert( "Text added: " + msg );
